@@ -1,0 +1,20 @@
+name: 'coverage-pull-request'
+on: 
+    pull_request:
+        branches:
+            - master
+            - main
+jobs:
+    jest-coverage-reporter:
+        permissions:
+            checks: write
+            pull-requests: write
+            contents: write
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: juanmartinez-facephi/test-action@v2.1.2
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  threshold-between-branch: -10
+
