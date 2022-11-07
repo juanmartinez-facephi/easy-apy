@@ -13,8 +13,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - run: npm install
-            - run: npm install -g jest
-            - uses: juanmartinez-facephi/test-action@v2.0.0
+            - uses: juanmartinez-facephi/test-action@v2.1.0
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
